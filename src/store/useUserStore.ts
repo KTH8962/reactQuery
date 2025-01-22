@@ -11,16 +11,17 @@ interface State {
   user: {
     email: string
     name: string
-    active: boolean
   } | null
+  active: boolean
 }
 
 interface Actions {
-  signIn: () => void
+  signIn: (email: string, name: string) => void
 }
 
 const initialState: State = {
   user: null,
+  active: false,
 }
 
 export const useUserStore = create(
@@ -35,7 +36,6 @@ export const useUserStore = create(
                   state.user = {
                     email: email,
                     name: name,
-                    active: false,
                   }
                 })
               },
@@ -45,7 +45,7 @@ export const useUserStore = create(
       ),
       {
         name: "userStores",
-        partialize: (state) => ({ count: state.user }),
+        partialize: (state) => ({ user: state.user, active: true }),
       }
     )
   )
