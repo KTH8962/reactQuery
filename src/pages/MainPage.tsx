@@ -1,4 +1,3 @@
-import DelayedData from "@/compnents/DelayedData"
 import { useUserStore } from "@/store/useUserStore"
 
 function MainPage() {
@@ -12,7 +11,8 @@ function MainPage() {
   }
   return (
     <>
-      <DelayedData />
+      {/* <DelayedData wait={2000} />
+      <DelayedData wait={3000} /> */}
       <div>
         {isActive &&
           user &&

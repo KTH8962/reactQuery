@@ -13,4 +13,13 @@
       font-size: 16px;
     }
   }
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: 0 10px;
+    a.active {
+      font-weight: bold;
+      color: rgb(110, 88, 235);
+    }
+  }
 }
