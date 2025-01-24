@@ -19,13 +19,18 @@ export default function Movies() {
     queryKey: ["movies", searchText], // 검색어
     queryFn: async () => {
       const res = await fetch(
-        `https://omdbapi.com?apikey=7035c60c&s=${searchText}`
+        `https://omdbapi.com?apikey=${
+          import.meta.env.VITE_API_KEY
+        }&s=${searchText}`
       )
       const { Search: movies } = await res.json()
       console.log(movies)
       return movies || []
     },
     placeholderData: (prev) => prev,
+    meta: {
+      myErrorMessage: "영화를 검색할 수 없어요!",
+    },
   })
 
   return (
@@ -38,12 +43,12 @@ export default function Movies() {
       />
       {error && <div>{error?.message}</div>}
       {isLoading && <div>isLoading....</div>}
-      <ul>
+      <ul style={{ display: "flex", flexWrap: "wrap", gap: "10px" }}>
         {movies?.map((movie) => {
           return (
-            <li key={movie.imdbID}>
+            <li key={movie.imdbID} style={{ width: "10%" }}>
               <h3>{movie?.Title}</h3>
-              <img src={movie.Poster} />
+              <img src={movie.Poster} style={{ width: "100%" }} />
             </li>
           )
         })}

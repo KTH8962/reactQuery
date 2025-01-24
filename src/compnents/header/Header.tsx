@@ -27,6 +27,12 @@ function Header() {
         >
           영화
         </NavLink>
+        <NavLink
+          to="/movies2"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+        >
+          영화2
+        </NavLink>
       </nav>
     </header>
   )
