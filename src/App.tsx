@@ -10,6 +10,7 @@ import DelayTime from "@/pages/DelayTime"
 import UserList from "@/pages/UserList"
 import MoviePage from "@/pages/MoviePage"
 import MovieList from "@/pages/MovieList"
+import UserList2 from "@/pages/UserList2"
 
 function App() {
   const queryClient = new QueryClient({
@@ -27,6 +28,7 @@ function App() {
           <Route path="/" element={<MainPage />} />
           <Route path="/delay" element={<DelayTime />} />
           <Route path="/user" element={<UserList />} />
+          <Route path="/user2" element={<UserList2 />} />
           <Route path="/movies" element={<MoviePage />} />
           <Route path="/movies2" element={<MovieList />} />
         </Routes>

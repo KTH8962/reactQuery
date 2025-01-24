@@ -22,6 +22,12 @@ function Header() {
           유저
         </NavLink>
         <NavLink
+          to="/user2"
+          className={({ isActive }) => (isActive ? styles.active : "")}
+        >
+          유저2
+        </NavLink>
+        <NavLink
           to="/movies"
           className={({ isActive }) => (isActive ? styles.active : "")}
         >

@@ -17,3 +17,5 @@ npm install @tanstack/react-query @tanstack/react-query-devtools
 npm i -D @tanstack/eslint-plugin-query
 
 npm i axios
+
+npm i react-intersection-observer
